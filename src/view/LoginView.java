@@ -21,6 +21,7 @@ public class LoginView extends javax.swing.JFrame {
   public LoginView() {
     initComponents();
     this.setLocationRelativeTo(this);
+    this.setResizable(false);
   }
 
   /**
@@ -175,7 +176,7 @@ public class LoginView extends javax.swing.JFrame {
           return;
         }
 
-        DoacaoView doacaoView = new DoacaoView();
+        MainScreenView doacaoView = new MainScreenView();
         doacaoView.setTitle("Menu Inicial");
 
         doacaoView.setVisible(true);

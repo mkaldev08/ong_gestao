@@ -7,7 +7,7 @@ import utils.CustomezedEnum;
  *
  * @author manuelkalueka
  */
-public class Projecto {
+public class Projeto {
 
     private int id_projeto;
 
