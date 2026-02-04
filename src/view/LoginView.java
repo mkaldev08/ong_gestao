@@ -35,11 +35,11 @@ public class LoginView extends javax.swing.JFrame {
 
     jPanel1 = new javax.swing.JPanel();
     logo = new javax.swing.JLabel();
-    txt_password = new javax.swing.JTextField();
     txt_username = new javax.swing.JTextField();
     jButton1 = new javax.swing.JButton();
     jLabel1 = new javax.swing.JLabel();
     jLabel2 = new javax.swing.JLabel();
+    txt_password = new javax.swing.JPasswordField();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("Login");
@@ -58,11 +58,6 @@ public class LoginView extends javax.swing.JFrame {
     logo.setPreferredSize(new java.awt.Dimension(20, 20));
     logo.setRequestFocusEnabled(false);
     logo.setSize(new java.awt.Dimension(20, 20));
-
-    txt_password.setBackground(new java.awt.Color(38, 78, 202));
-    txt_password.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-    txt_password.setForeground(new java.awt.Color(255, 255, 255));
-    txt_password.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
     txt_username.setBackground(new java.awt.Color(38, 78, 202));
     txt_username.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
@@ -94,6 +89,12 @@ public class LoginView extends javax.swing.JFrame {
       }
     });
 
+    txt_password.setBackground(new java.awt.Color(38, 78, 202));
+    txt_password.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+    txt_password.setForeground(new java.awt.Color(255, 255, 255));
+    txt_password.setPreferredSize(new java.awt.Dimension(115, 24));
+    txt_password.setSize(new java.awt.Dimension(115, 24));
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -107,8 +108,8 @@ public class LoginView extends javax.swing.JFrame {
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
             .addComponent(txt_username, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
-            .addComponent(txt_password)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(txt_password, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jLabel1)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -122,9 +123,9 @@ public class LoginView extends javax.swing.JFrame {
         .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
         .addGap(35, 35, 35)
         .addComponent(txt_username, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(50, 50, 50)
+        .addGap(60, 60, 60)
         .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(64, 64, 64)
+        .addGap(54, 54, 54)
         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -177,8 +178,6 @@ public class LoginView extends javax.swing.JFrame {
         }
 
         MainScreenView doacaoView = new MainScreenView();
-        doacaoView.setTitle("Menu Inicial");
-
         doacaoView.setVisible(true);
 
         this.dispose();
@@ -225,7 +224,7 @@ public class LoginView extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel2;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JLabel logo;
-  private javax.swing.JTextField txt_password;
+  private javax.swing.JPasswordField txt_password;
   private javax.swing.JTextField txt_username;
   // End of variables declaration//GEN-END:variables
 }

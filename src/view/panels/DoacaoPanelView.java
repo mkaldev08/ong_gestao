@@ -1,4 +1,4 @@
-package view;
+package view.panels;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -35,7 +35,10 @@ public class DoacaoPanelView extends javax.swing.JPanel {
     btn_Eliminar = new javax.swing.JButton();
     btn_Novo = new javax.swing.JButton();
     btn_Editar1 = new javax.swing.JButton();
+    jLabel2 = new javax.swing.JLabel();
+    btn_Editar2 = new javax.swing.JButton();
 
+    setBackground(new java.awt.Color(255, 255, 255));
     setMaximumSize(new java.awt.Dimension(760, 720));
     setPreferredSize(new java.awt.Dimension(760, 720));
 
@@ -60,12 +63,22 @@ public class DoacaoPanelView extends javax.swing.JPanel {
     btn_Novo.setBackground(new java.awt.Color(38, 78, 202));
     btn_Novo.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
     btn_Novo.setForeground(new java.awt.Color(255, 255, 255));
-    btn_Novo.setText("Nova Doação");
+    btn_Novo.setText("Entregar");
 
     btn_Editar1.setBackground(new java.awt.Color(255, 255, 255));
     btn_Editar1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
     btn_Editar1.setForeground(new java.awt.Color(38, 78, 202));
     btn_Editar1.setText("Editar");
+
+    jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+    jLabel2.setForeground(new java.awt.Color(38, 78, 202));
+    jLabel2.setText("Doação");
+
+    btn_Editar2.setBackground(new java.awt.Color(255, 255, 255));
+    btn_Editar2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+    btn_Editar2.setForeground(new java.awt.Color(38, 78, 202));
+    btn_Editar2.setText("Receber ");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
     this.setLayout(layout);
@@ -73,35 +86,43 @@ public class DoacaoPanelView extends javax.swing.JPanel {
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
         .addGap(32, 32, 32)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+          .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addGroup(layout.createSequentialGroup()
+            .addComponent(jLabel2)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_Editar2)
+            .addGap(18, 18, 18)
             .addComponent(btn_Novo)
             .addGap(34, 34, 34)
             .addComponent(btn_Editar1)
             .addGap(34, 34, 34)
-            .addComponent(btn_Eliminar))
-          .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(82, Short.MAX_VALUE))
+            .addComponent(btn_Eliminar)))
+        .addContainerGap(52, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addGap(50, 50, 50)
+        .addGap(47, 47, 47)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btn_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btn_Editar1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(btn_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(btn_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btn_Editar2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel2))
         .addGap(76, 76, 76)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(145, Short.MAX_VALUE))
+        .addContainerGap(317, Short.MAX_VALUE))
     );
   }// </editor-fold>//GEN-END:initComponents
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btn_Editar1;
+  private javax.swing.JButton btn_Editar2;
   private javax.swing.JButton btn_Eliminar;
   private javax.swing.JButton btn_Novo;
+  private javax.swing.JLabel jLabel2;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JTable tb_doacao;
   // End of variables declaration//GEN-END:variables

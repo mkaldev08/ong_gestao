@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view;
+package view.panels;
 
 /**
  *
  * @author manuelkalueka
  */
-public class ProjetoPanelView extends javax.swing.JPanel {
+public class DashboardPanelView extends javax.swing.JPanel {
 
   /**
-   * Creates new form ProjetoPanelView
+   * Creates new form DashboardPanelView
    */
-  public ProjetoPanelView() {
+  public DashboardPanelView() {
     initComponents();
   }
 
@@ -25,6 +25,8 @@ public class ProjetoPanelView extends javax.swing.JPanel {
   @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
+
+    setPreferredSize(new java.awt.Dimension(760, 720));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
     this.setLayout(layout);

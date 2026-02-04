@@ -15,7 +15,7 @@ public class ProjetoController {
   public void salvar(Projeto p)
           throws ClassNotFoundException, SQLException {
 
-    String sql = "INSERT INTO projeto (nome, descricao, data_inicio, data_fim, status, data_criacao) VALUES (?, ?, ?, ?, ?, ?)";
+    String sql = "INSERT INTO projeto (nome, descricao, data_inicio, data_fim, status) VALUES (?, ?, ?, ?, ?)";
 
     try (PreparedStatement pst = Conexao.conectar().prepareStatement(sql)) {
       pst.setString(1, p.getNome());
@@ -23,7 +23,7 @@ public class ProjetoController {
       pst.setDate(3, Date.valueOf(p.getData_inicio()));
       pst.setDate(4, p.getData_fim() != null ? Date.valueOf(p.getData_fim()) : null);
       pst.setString(5, p.getStatus().name());
-      pst.setDate(6, Date.valueOf(p.getData_criacao()));
+
       pst.executeUpdate();
     }
   }
@@ -31,7 +31,7 @@ public class ProjetoController {
   public List<Projeto> listar()
           throws ClassNotFoundException, SQLException {
 
-    String sql = "SELECT * FROM projeto";
+    String sql = "SELECT * FROM projeto WHERE status = 'ATIVO'";
     List<Projeto> lista = new ArrayList<>();
 
     try (PreparedStatement pst = Conexao.conectar().prepareStatement(sql); ResultSet rs = pst.executeQuery()) {
@@ -46,7 +46,7 @@ public class ProjetoController {
         p.setData_fim(df != null ? df.toLocalDate() : null);
         p.setStatus(CustomezedEnum.valueOf(rs.getString("status")));
         p.setData_criacao(rs.getDate("data_criacao").toLocalDate());
-        
+
         lista.add(p);
       }
     }
@@ -100,10 +100,11 @@ public class ProjetoController {
   public void excluir(int id)
           throws ClassNotFoundException, SQLException {
 
-    String sql = "DELETE FROM projeto WHERE id_projeto = ?";
+    String sql = "UPDATE projeto SET status = ? WHERE id_projeto = ?";
 
     try (PreparedStatement pst = Conexao.conectar().prepareStatement(sql)) {
-      pst.setInt(1, id);
+      pst.setString(1, "ENCERRADO");
+      pst.setInt(2, id);
       pst.executeUpdate();
     }
   }

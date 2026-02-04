@@ -22,6 +22,7 @@ public class BeneficiarioController {
       pst.setString(3, b.getDocumento());
       pst.setString(4, b.getTelefone());
       pst.setBoolean(5, b.isAtivo());
+
       pst.executeUpdate();
     }
   }
@@ -50,13 +51,11 @@ public class BeneficiarioController {
     return lista;
   }
 
-  // =========================
-  // READ (BUSCAR POR ID)
-  // =========================
   public Beneficiario buscarPorId(int id)
           throws ClassNotFoundException, SQLException {
 
     String sql = "SELECT * FROM beneficiario WHERE id_beneficiario = ?";
+
     Beneficiario b = null;
 
     try (PreparedStatement pst = Conexao.conectar().prepareStatement(sql)) {
@@ -78,7 +77,7 @@ public class BeneficiarioController {
     return b;
   }
 
-  public void atualizar(Beneficiario b)
+  public void atualizar(Beneficiario b, int id)
           throws ClassNotFoundException, SQLException {
 
     String sql = """
@@ -92,7 +91,8 @@ public class BeneficiarioController {
       pst.setString(2, b.getTipo().name());
       pst.setString(3, b.getDocumento());
       pst.setString(4, b.getTelefone());
-      pst.setInt(5, b.getId_beneficiario());
+      pst.setInt(5, id);
+
       pst.executeUpdate();
     }
   }
@@ -104,6 +104,7 @@ public class BeneficiarioController {
 
     try (PreparedStatement pst = Conexao.conectar().prepareStatement(sql)) {
       pst.setInt(1, id);
+
       pst.executeUpdate();
     }
   }

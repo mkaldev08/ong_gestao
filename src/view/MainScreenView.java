@@ -1,5 +1,9 @@
 package view;
 
+import view.panels.ProjetoPanelView;
+import view.panels.DoacaoPanelView;
+import view.panels.DashboardPanelView;
+import view.panels.BeneficiarioPanelView;
 import java.awt.CardLayout;
 
 /**
@@ -7,8 +11,6 @@ import java.awt.CardLayout;
  * @author manuelkalueka
  */
 public class MainScreenView extends javax.swing.JFrame {
-
-  
 
   private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainScreenView.class.getName());
 
@@ -18,7 +20,7 @@ public class MainScreenView extends javax.swing.JFrame {
   public MainScreenView() {
     initComponents();
     this.setLocationRelativeTo(this);
-   
+
     this.setResizable(false);
     setSize(940, 720);
     initCards();
@@ -36,6 +38,8 @@ public class MainScreenView extends javax.swing.JFrame {
   }
 
   public void navegar(String nomeTela) {
+    this.setTitle(nomeTela);
+
     CardLayout cl = (CardLayout) ContentPanel.getLayout();
     cl.show(ContentPanel, nomeTela);
   }
@@ -159,7 +163,8 @@ public class MainScreenView extends javax.swing.JFrame {
       .addGroup(jpanel1Layout.createSequentialGroup()
         .addComponent(SidebarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(ContentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addComponent(ContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(766, Short.MAX_VALUE))
     );
     jpanel1Layout.setVerticalGroup(
       jpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,7 +176,9 @@ public class MainScreenView extends javax.swing.JFrame {
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jpanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addGroup(layout.createSequentialGroup()
+        .addComponent(jpanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,22 +189,18 @@ public class MainScreenView extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void side_dashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_side_dashboardActionPerformed
-    
     navegar("DASHBOARD");
   }//GEN-LAST:event_side_dashboardActionPerformed
 
   private void side_doacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_side_doacaoActionPerformed
-    
     navegar("DOACAO");
   }//GEN-LAST:event_side_doacaoActionPerformed
 
   private void side_beneficiarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_side_beneficiarioActionPerformed
-    
     navegar("BENEFICIARIO");
   }//GEN-LAST:event_side_beneficiarioActionPerformed
 
   private void side_projectossActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_side_projectossActionPerformed
-    
     navegar("PROJETO");
   }//GEN-LAST:event_side_projectossActionPerformed
 
